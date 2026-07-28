@@ -24,6 +24,3 @@ await addContent("notes.txt","FS IS EASY IN JS");
 console.log("content:\n", await readContent("notes.txt"));
 await appendData("notes.txt","it can add update and read data");
 console.log("updated content:\n", await readContent("notes.txt"));
-
-
-
