@@ -1,11 +1,5 @@
 [
   {
-    "id": 67,
-    "name": "mouse",
-    "price": 150,
-    "qty": 0
-  },
-  {
     "id": 99,
     "name": "headphone",
     "price": 800,

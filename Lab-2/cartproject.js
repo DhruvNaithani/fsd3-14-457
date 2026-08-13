@@ -51,13 +51,18 @@ const removeproduct = async(pid) =>{
 const updateproduct=async(pid)=>{
     const cart=await getCart();
     const newcart=cart.find((item)=>item.id===pid);
+
     if(newcart){
-        console.log('quantity of product is updated👍');
-        newcart.qty-=1;
-        
+        if(newcart.qty==1){
+            await removeproduct(pid);
+        }
+        else{
+            
+            newcart.qty-=1;
+             await saveCart(cart);
+        }
     }
-    
-    await saveCart(cart);
+   console.log('quantity of product is updated👍');
 }
 const main= async ()=>{
     let choice;
