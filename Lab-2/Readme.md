@@ -6,7 +6,7 @@ d->delete.
 # File system of NodeJs
 It allows JS code running outside the browser and interact directly to operating system
 ## Common operations on file/folder
-- Reeading and writing files -> readfile(),writefile(),appendfile()
+- Reading and writing files -> readfile(),writefile(),appendfile()
 - Directory management -> mkdir(),rmdir(),readdir()
 - Metadata/information -> stat(),lstat(),fstat()
 - Watching for changes -> watch(),watchfile(),unwatchfile()
