@@ -4,6 +4,7 @@ const F1=()=>{
     console.log('F1 running');
     console.log('F1 end');
 };
+
 const F2=()=>{
     console.log('F2 start');
     F3();

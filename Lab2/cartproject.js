@@ -14,6 +14,7 @@ const saveCart= async (cart)=>{
     await writeFile(FILE,JSON.stringify(cart,null,2));
 };
 
+
 const addtocart= async (product)=>{
     const cart= await getCart();
     const isFoundCart = cart.find((item)=> item.id === product.id);
