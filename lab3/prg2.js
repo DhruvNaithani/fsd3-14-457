@@ -1,8 +1,11 @@
-import http from 'http';
-const server=http.createServer((req,res)=>{
-    res.write("prg2 is created");
-    res.end();
+import http from "http";
+
+const server = http.createServer((req, res) => {
+  //   res.writeHead(500, {
+  //     "content-type": "text/html",
+  //   });
+
+  res.end("<h1>Welcome to Server</h1>");
 });
-server.listen(3002,()=>{
-    console.log("prg2 is working");
-});
+
+server.listen(4444, () => console.log("Server is running"));
