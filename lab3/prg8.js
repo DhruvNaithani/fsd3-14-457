@@ -11,25 +11,25 @@ const server =http.createServer(async(req,res)=>{
     } else if(req.url==='/product'){
         res.setHeader("content-type","text/html");
         res.statusCode=200;
-        const data=createReadStream("product.html");
+        const data=createReadStream("pages/product.html");
         data.pipe(res);
     } else if(req.url==='/about'){
         res.setHeader("content-type","text/html");
         res.statusCode=200;
-        const data=createReadStream("about.html");
+        const data=createReadStream("pages/about.html");
         data.pipe(res);
     }else if(req.url==='/home'){
         res.setHeader("content-type","text/html");
         res.statusCode=200;
-        const data=createReadStream("home.html");
+        const data=createReadStream("pages/home.html");
         data.pipe(res);
     } else if(req.url==='/contact'){
         res.setHeader("content-type","text/html");
         res.statusCode=200;
-        const data=createReadStream("contact.html");
+        const data=createReadStream("pages/contact.html");
         data.pipe(res);
     } 
 });
-server.listen(4000,()=>{
+server.listen(4003,()=>{
     console.log('server is listening');
 });
