@@ -6,7 +6,7 @@ let nextId=3;
 export const getAllteams=()=>teams;
 export const getTeamId=(id)=>teams.find((team)=>team.id===id);
 export const addTeam=(newteam)=>{
-   const team={id:nextId++,newteam};
+   const team={id:nextId++,...newteam};
    teams.push(team);
    return team;
 };
