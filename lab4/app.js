@@ -32,25 +32,51 @@ const server = http.createServer(async (req, res) => {
     }
 
     // GET /teams/:id -> Get team by ID
-    if (url.startsWith("/teams/") && method === "GET") {
+    else if (url.startsWith("/teams/") && method === "GET") {
         const id = parseInt(url.split("/")[2]);
-        const team = getteamId(id);
+        const team = getTeamId(id);
         if (!team) return sendJson(res, 404, { message: "Team not found" });
         return sendJson(res, 200, team);
     }
 
     // POST /teams -> Add new team
-    if (url === "/teams" && method === "POST") {
+    else if (url === "/teams" && method === "POST") {
         try {
-            const body = await parseRequestBody(req);
+            const body = parseRequestBody(req);
             const newTeam = addTeam(body);
             return sendJson(res, 201, newTeam);
         } catch (err) {
             return sendJson(res, 400, { message: "Invalid JSON format" });
         }
     }
+    // DELETE/teams/id ->delete team
+    else if(url.startsWith("/teams/") && method==="DELETE"){
+        const id = parseInt(url.split("/")[2]);
+        const team = getTeamId(id);
+        if (!team) return sendJson(res, 404, { message: "Team not found" });
+        deleteTeam(id);
+        return sendJson(res, 200, {message : "team deleted successfully"});
+    }
+
+    // UPDATE/teams/id ->update team
+    else if(url.startsWith("/teams/") && method==="PUT"){
+        const id = parseInt(url.split("/")[2]);
+        const team = getTeamId(id);
+        if (!team) return sendJson(res, 404, { message: "Team not found" });
+        try{
+            const body = await parseRequestBody(req);
+            const updateteam=updateTeambyId(id,body);
+
+            return sendJson(res , 200 , updateteam);
+        }
+        catch{
+            return sendJson(res, 400, { message: "Invalid JSON format" });
+        }
+    }
     // Route not found
-    sendJson(res, 404, { message: "Route not found" });
+    else{
+        sendJson(res, 404, { message: "Route not found" });
+    }
 });
 
 server.listen(5000, () => {
