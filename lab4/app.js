@@ -1,7 +1,8 @@
 import http from 'http';
 import { getAllteams, getTeamId, addTeam, updateTeambyId, deleteTeam } from "./teams.js";
+import {parse as parseUrl} from "url";
 
-const sendJson = (res, statusCode, data) => {
+const sendJson = (res, statusCode, data,keyword,msg) => {
     res.writeHead(statusCode, { "Content-Type": "application/json" });
     res.end(data === undefined ? "" : JSON.stringify(data));
 };
@@ -48,7 +49,6 @@ const server = http.createServer(async (req, res) => {
             return sendJson(res, 400, { message: "Invalid JSON format" });
         }
     }
-
     // Route not found
     sendJson(res, 404, { message: "Route not found" });
 });
