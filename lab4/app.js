@@ -38,6 +38,7 @@ const server = http.createServer(async (req, res) => {
         if (!team) return sendJson(res, 404, { message: "Team not found" });
         return sendJson(res, 200, team);
     }
+    
 
     // POST /teams -> Add new team
     else if (url === "/teams" && method === "POST") {
