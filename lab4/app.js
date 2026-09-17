@@ -2,7 +2,7 @@ import http from 'http';
 import { getAllteams, getTeamId, addTeam, updateTeambyId, deleteTeam } from "./teams.js";
 import {parse as parseUrl} from "url";
 
-const sendJson = (res, statusCode, data,keyword,msg) => {
+const sendJson = (res, statusCode, data) => {
     res.writeHead(statusCode, { "Content-Type": "application/json" });
     res.end(data === undefined ? "" : JSON.stringify(data));
 };
