@@ -7,11 +7,23 @@
     display:flex;
     gap:4px;
     flex-wrap:wrap;
+    height:200px;
   }
   .book{
     padding:10px;
     border:2px black solid;
-  }
+     background-color: rgb(162, 155, 155);
+     width:300px;
+     justify-content: center;
+    }
   .book img{
-    height:100px;
+    height:200px;
+    width:150px;
+    
+  }
+  .btn{
+    background-color: gold;
+    border:1px solid black;
+    width:185px;
+    height:25px;
   }
