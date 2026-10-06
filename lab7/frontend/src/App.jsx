@@ -4,6 +4,7 @@ import { books } from './data/books.js';
 import { pens } from './data/pens.js';
 import Fruit from './components/Fruit.jsx';
 import fruit from './data/fruit.js';
+import Event from './components/Event.jsx';
 
 export default function App(){
   return (
@@ -22,6 +23,7 @@ export default function App(){
     <Fruit fruit={fruit[1]}/>
     <Fruit fruit={fruit[2]}/>
     <Fruit fruit={fruit[3]}/>
+    <Event/>
     </div>
     </>
   );

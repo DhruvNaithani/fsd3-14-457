@@ -7,7 +7,7 @@ const product=[
     {title:"potato",id:4,isFruit:false}
 ];
 const Listitem = product.map((item) => (
-    <li key={item.id}>{item.title}</li>
+    <li key={item.id} style={{color: item.isFruit ? "red" : "green" }}>{item.title}</li>
 ));
 
 console.log(Listitem);
@@ -24,6 +24,7 @@ function Fruit(props) {
             <p><strong>Price:</strong> ${Price}</p>
             <p><strong>Quantity:</strong> {quantity}</p>
             <button className="btn">Buy Now</button>
+            <li>{Listitem}</li>
         </div>
   )
 }
