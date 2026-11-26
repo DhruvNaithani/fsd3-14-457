@@ -1,6 +1,6 @@
 import { EventEmitter } from "node:events";
 
-const task = new MyEventEmitter();
+const task = new EventEmitter();
 
 const sayHi = (name) => {
   console.log(`Loggedin ${name}`);

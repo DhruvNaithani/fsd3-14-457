@@ -4,7 +4,7 @@ const MyButton=()=>{
         alert("Button Cliccked");
     }
     return(
-        <button style={{backgroundColor:"red", color:"black" , width:"200px" , height:"30px" , border:"2px solid black"}} onClick={handleClick}>Click Me</button>
+        <button className= 'px-2 py-4 bg-black hover:bg-gray-50 hover:text-black text-white' onClick={handleClick}>Click Me</button>
     );
 }
 const Event = () => {

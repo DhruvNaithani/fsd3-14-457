@@ -1,4 +1,4 @@
-*{
+/* *{
   margin:0;
   padding: 0;
   box-sizing: border-box;
@@ -7,7 +7,6 @@
     display:flex;
     gap:4px;
     flex-wrap:wrap;
-    /* height:200px; */
   }
   .book{
     padding:10px;
@@ -27,3 +26,5 @@
     width:185px;
     height:25px;
   }
+   */
+@import "tailwindcss";

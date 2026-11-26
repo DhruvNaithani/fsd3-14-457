@@ -6,10 +6,22 @@ import Fruit from './components/Fruit.jsx';
 import fruit from './data/fruit.js';
 import Event from './components/Event.jsx';
 
+const Mybutton=()=>{
+  const handleSubmit=(count)=>{
+      console.log("you clicked:",count);
+      count++;
+  }
+  return(
+
+    <button className='bg-black text-xl text-white rounded-b-md m-4 px-4 py-2  hover:bg-yellow-300 hover:text-amber-700' onClick={handleSubmit(count)}>submit {count}</button>
+  );
+}
+
 export default function App(){
   return (
     <>
-    <h1>Hello world</h1>
+    <Mybutton/>
+    {/* <h1>Hello world</h1>
     <div className="container">
     <Book book={books[0]}/>
     <Book book={books[1]}/>
@@ -24,7 +36,7 @@ export default function App(){
     <Fruit fruit={fruit[2]}/>
     <Fruit fruit={fruit[3]}/>
     <Event/>
-    </div>
+    </div> */}
     </>
   );
 }

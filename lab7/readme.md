@@ -51,3 +51,23 @@
 ```
 
 # By default a button is a submit button.
+## Add tailwind to existing existing react project
+1. Open terminal and go to project frontend folder.
+2. Install tailwind by 
+`npm install tailwindcss @tailwindcss/vite`.
+3. open vite.config.js
+4. Import : `import tailwindcss from '@tailwindcss/vite'`.
+5. add `add tailwindcss()` after react().
+6. The file should look like
+```
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(),tailwindcss()],
+})
+```
+7. Open index.css and remove all elements, then add below line
+    `@import "tailwindcss";`.
